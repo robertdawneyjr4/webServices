@@ -26,23 +26,38 @@ public interface CompraBoleto {
 
     /**
      * 
+     * @param fecha
      * @param tipo
+     * @param precio
      * @param hora
-     * @param pago
+     * @param correo
+     * @param fPago
+     * @param telefono
+     * @param nombre
      * @return
-     *     returns java.lang.String
+     *     returns int
      */
-    @WebMethod(operationName = "CompraBoleto")
+    @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "CompraBoleto", targetNamespace = "http://WS/", className = "WS.CompraBoleto_Type")
-    @ResponseWrapper(localName = "CompraBoletoResponse", targetNamespace = "http://WS/", className = "WS.CompraBoletoResponse")
-    @Action(input = "http://WS/CompraBoleto/CompraBoletoRequest", output = "http://WS/CompraBoleto/CompraBoletoResponse")
-    public String compraBoleto(
+    @RequestWrapper(localName = "boletos", targetNamespace = "http://WS/", className = "WS.Boletos")
+    @ResponseWrapper(localName = "boletosResponse", targetNamespace = "http://WS/", className = "WS.BoletosResponse")
+    @Action(input = "http://WS/CompraBoleto/boletosRequest", output = "http://WS/CompraBoleto/boletosResponse")
+    public int boletos(
         @WebParam(name = "tipo", targetNamespace = "")
         String tipo,
         @WebParam(name = "hora", targetNamespace = "")
         String hora,
-        @WebParam(name = "pago", targetNamespace = "")
-        String pago);
+        @WebParam(name = "fPago", targetNamespace = "")
+        String fPago,
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "telefono", targetNamespace = "")
+        String telefono,
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo,
+        @WebParam(name = "fecha", targetNamespace = "")
+        String fecha,
+        @WebParam(name = "precio", targetNamespace = "")
+        int precio);
 
 }

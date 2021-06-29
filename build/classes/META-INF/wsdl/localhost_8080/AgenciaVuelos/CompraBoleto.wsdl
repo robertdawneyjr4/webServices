@@ -4,21 +4,21 @@
 <xsd:import namespace="http://WS/" schemaLocation="http://localhost:8080/AgenciaVuelos/CompraBoleto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="CompraBoleto">
-<part name="parameters" element="tns:CompraBoleto"/>
+<message name="boletos">
+<part name="parameters" element="tns:boletos"/>
 </message>
-<message name="CompraBoletoResponse">
-<part name="parameters" element="tns:CompraBoletoResponse"/>
+<message name="boletosResponse">
+<part name="parameters" element="tns:boletosResponse"/>
 </message>
 <portType name="CompraBoleto">
-<operation name="CompraBoleto">
-<input wsam:Action="http://WS/CompraBoleto/CompraBoletoRequest" message="tns:CompraBoleto"/>
-<output wsam:Action="http://WS/CompraBoleto/CompraBoletoResponse" message="tns:CompraBoletoResponse"/>
+<operation name="boletos">
+<input wsam:Action="http://WS/CompraBoleto/boletosRequest" message="tns:boletos"/>
+<output wsam:Action="http://WS/CompraBoleto/boletosResponse" message="tns:boletosResponse"/>
 </operation>
 </portType>
 <binding name="CompraBoletoPortBinding" type="tns:CompraBoleto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="CompraBoleto">
+<operation name="boletos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

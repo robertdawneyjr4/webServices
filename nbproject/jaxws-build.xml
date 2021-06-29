@@ -16,6 +16,23 @@
             <classpath path="${libs.jaxws21.classpath}"/>
         </taskdef>
     </target>
+    <target name="wsimport-client-CompraBoleto" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CompraBoleto"/>
+        <property name="wsdl-CompraBoleto" location="xml-resources/web-service-references/CompraBoleto/wsdl/localhost_8080/AgenciaVuelos/CompraBoleto.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CompraBoleto" destdir="${build.generated.dir}/jax-wsCache/CompraBoleto" wsdl="${wsdl-CompraBoleto}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AgenciaVuelos/CompraBoleto?wsdl" xnocompile="true" xendorsed="true" package="WS">
+            <depends file="${wsdl-CompraBoleto}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CompraBoleto"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CompraBoleto">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-CompraBoleto" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/CompraBoleto"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/WS"/>
+    </target>
     <target name="wsimport-client-Login" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/Login"/>
         <property name="wsdl-Login" location="xml-resources/web-service-references/Login/wsdl/localhost_8080/AgenciaVuelos/Login.wsdl"/>
@@ -50,23 +67,6 @@
         <delete dir="${build.generated.dir}/jax-wsCache/RegistroUsuario"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/WS"/>
     </target>
-    <target name="wsimport-client-CompraBoleto" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/CompraBoleto"/>
-        <property name="wsdl-CompraBoleto" location="xml-resources/web-service-references/CompraBoleto/wsdl/localhost_8080/AgenciaVuelos/CompraBoleto.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CompraBoleto" destdir="${build.generated.dir}/jax-wsCache/CompraBoleto" wsdl="${wsdl-CompraBoleto}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AgenciaVuelos/CompraBoleto?wsdl" xnocompile="true" xendorsed="true" package="WS">
-            <depends file="${wsdl-CompraBoleto}"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/CompraBoleto"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/CompraBoleto">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-CompraBoleto" depends="-init-project">
-        <delete dir="${build.generated.dir}/jax-wsCache/CompraBoleto"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/WS"/>
-    </target>
     <target name="wsimport-client-CompraVuelo" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/CompraVuelo"/>
         <property name="wsdl-CompraVuelo" location="xml-resources/web-service-references/CompraVuelo/wsdl/localhost_8080/AgenciaVuelos/CompraVuelo.wsdl"/>
@@ -84,5 +84,5 @@
         <delete dir="${build.generated.dir}/jax-wsCache/CompraVuelo"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/WS"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Login, wsimport-client-RegistroUsuario, wsimport-client-CompraBoleto, wsimport-client-CompraVuelo"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-CompraBoleto, wsimport-client-Login, wsimport-client-RegistroUsuario, wsimport-client-CompraVuelo"/>
 </project>

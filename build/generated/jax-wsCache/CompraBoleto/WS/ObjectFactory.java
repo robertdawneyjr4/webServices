@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _CompraBoleto_QNAME = new QName("http://WS/", "CompraBoleto");
-    private final static QName _CompraBoletoResponse_QNAME = new QName("http://WS/", "CompraBoletoResponse");
+    private final static QName _BoletosResponse_QNAME = new QName("http://WS/", "boletosResponse");
+    private final static QName _Boletos_QNAME = new QName("http://WS/", "boletos");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: WS
@@ -35,37 +35,37 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CompraBoletoResponse }
+     * Create an instance of {@link Boletos }
      * 
      */
-    public CompraBoletoResponse createCompraBoletoResponse() {
-        return new CompraBoletoResponse();
+    public Boletos createBoletos() {
+        return new Boletos();
     }
 
     /**
-     * Create an instance of {@link CompraBoleto_Type }
+     * Create an instance of {@link BoletosResponse }
      * 
      */
-    public CompraBoleto_Type createCompraBoleto_Type() {
-        return new CompraBoleto_Type();
+    public BoletosResponse createBoletosResponse() {
+        return new BoletosResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CompraBoleto_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BoletosResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://WS/", name = "CompraBoleto")
-    public JAXBElement<CompraBoleto_Type> createCompraBoleto(CompraBoleto_Type value) {
-        return new JAXBElement<CompraBoleto_Type>(_CompraBoleto_QNAME, CompraBoleto_Type.class, null, value);
+    @XmlElementDecl(namespace = "http://WS/", name = "boletosResponse")
+    public JAXBElement<BoletosResponse> createBoletosResponse(BoletosResponse value) {
+        return new JAXBElement<BoletosResponse>(_BoletosResponse_QNAME, BoletosResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CompraBoletoResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Boletos }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://WS/", name = "CompraBoletoResponse")
-    public JAXBElement<CompraBoletoResponse> createCompraBoletoResponse(CompraBoletoResponse value) {
-        return new JAXBElement<CompraBoletoResponse>(_CompraBoletoResponse_QNAME, CompraBoletoResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://WS/", name = "boletos")
+    public JAXBElement<Boletos> createBoletos(Boletos value) {
+        return new JAXBElement<Boletos>(_Boletos_QNAME, Boletos.class, null, value);
     }
 
 }

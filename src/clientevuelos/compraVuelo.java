@@ -32,15 +32,15 @@ public class compraVuelo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         ori = new javax.swing.JTextField();
         des = new javax.swing.JTextField();
         fec = new javax.swing.JTextField();
-        no = new javax.swing.JTextField();
         tip = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         txtrespu = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        no = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,8 +54,6 @@ public class compraVuelo extends javax.swing.JFrame {
 
         jLabel5.setText("Tipo de viaje:");
 
-        jLabel6.setText("No. personas:");
-
         tip.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Redondo", "Sencillo" }));
         tip.setSelectedIndex(-1);
 
@@ -67,6 +65,8 @@ public class compraVuelo extends javax.swing.JFrame {
         });
 
         jButton2.setText("Regresar");
+
+        jLabel6.setText("Hora: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,6 +84,7 @@ public class compraVuelo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -96,9 +97,8 @@ public class compraVuelo extends javax.swing.JFrame {
                                     .addComponent(ori)
                                     .addComponent(des)
                                     .addComponent(fec)
-                                    .addComponent(no)
-                                    .addComponent(tip, 0, 171, Short.MAX_VALUE)))
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(tip, 0, 171, Short.MAX_VALUE)
+                                    .addComponent(no)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(txtrespu, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -125,11 +125,11 @@ public class compraVuelo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(tip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -157,7 +157,7 @@ public class compraVuelo extends javax.swing.JFrame {
         
         txtrespu.setText(respu);
         
-        CompraBoleto c1=new CompraBoleto();
+        compraBoleto c1=new compraBoleto();
         c1.setVisible(true);
         setVisible(false);
         
